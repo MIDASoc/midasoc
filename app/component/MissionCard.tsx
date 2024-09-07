@@ -6,7 +6,7 @@ function MissionCard(data: any) {
   return (
     <div className="component-body02">
       {data.data.MissionData.map((key: any, index: number) => (
-        <div className="missionCard">
+        <div key={key} className="missionCard">
           <div className="missionCard-body">{key.description}</div>
           <div className="missionCard-footer">
             {index + 1} |{key.title}
