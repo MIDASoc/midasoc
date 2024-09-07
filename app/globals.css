@@ -20,6 +20,8 @@
 body {
   background-color: #51008b;
   margin: 0;
+  overflow-x: hidden;
+  
 }
 
 /* width */
@@ -145,10 +147,11 @@ body {
 
   justify-content: center;
   height: 100vh;
+  width: 100vw;
   position: relative;
   flex-direction: column;
   align-items: flex-start;
- padding-left: 5rem;
+ padding-left: 10rem;
 
   font-size: 3rem;
   font-weight: 800;
@@ -240,22 +243,20 @@ body {
   justify-content: center;
   flex-direction: column;
   flex: 2;
-  height: 95vh;
+  
   background-color: #ffffff;
   color: #51008b;
 }
 .component-header {
-  position: absolute;
-  top: 30%;
-  left: 30%;
   transition: 0.9s;
   font-size: 5rem;
-}
-.component-header.active {
-  top: 5%;
-  left: 5%;
+  margin-left: 5%;
+  margin-bottom: 0%;
   font-size: 2rem;
   font-weight: 800;
+}
+.component-header.active {
+  margin-bottom: 3%;
 }
 
 .component-header01 {
@@ -269,23 +270,31 @@ body {
 .component-header01.active {
   margin-bottom: 3%;
 }
-.component-body {
-  position: absolute;
-  top: 50%;
+
+.component-header02 {
   transition: 0.9s;
+  font-size: 5rem;
+  margin-left: 5%;
+  margin-bottom: 0%;
   font-size: 2rem;
-  font-weight: 300;
-  left: 5%;
-  right: 5%;
+  font-weight: 800;
+}
+.component-header02.active {
+  margin-bottom: 3%;
+}
+.component-body {
+  transition: 0.9s;
+  margin-left: 5%;
+  margin-right: 5%;
   text-align: justify;
   font-weight: 100;
-}
-.component-body.active {
   top: 15%;
   left: 5%;
   right: 5%;
   font-size: 1.5rem;
-  font-weight: 100;
+}
+.component-body.active {
+  animation: fadeSlideIn 0.9s ease forwards;
 }
 .component-body01 {
   transition: 0.9s;
@@ -308,6 +317,22 @@ body {
   margin-top: 5%;
   margin-left: 5%;
   margin-right: 5%;
+}
+
+.component-body03 {
+  transition: 0.9s;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: justify;
+  font-weight: 100;
+  top: 15%;
+  left: 5%;
+  right: 5%;
+  font-size: 1.5rem;
+}
+
+.component-body03.active {
+  animation: fadeSlideIn 0.9s ease forwards;
 }
 .component-body01.active {
   animation: fadeSlideIn 0.9s ease forwards;

@@ -78,6 +78,8 @@ export default function Home() {
     const body = document.querySelector(".component-body");
     const historyBody = document.querySelector(".component-body01");
     const historyHeader = document.querySelector(".component-header01");
+    const visionHeader = document.querySelector(".component-header02");
+    const visionBody = document.querySelector(".component-body03");
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -102,11 +104,18 @@ export default function Home() {
     if (historyHeader) {
       observer.observe(historyHeader);
     }
+    if (visionHeader) {
+      observer.observe(visionHeader);
+    }
+    if (visionBody) {
+      observer.observe(visionBody);
+    }
 
     return () => {
       if (header) observer.unobserve(header);
       if (body) observer.unobserve(body);
       if (historyBody) observer.unobserve(historyBody);
+      if (visionHeader) observer.unobserve(visionHeader);
     };
   }, [activeTab]);
   return (
@@ -130,7 +139,7 @@ export default function Home() {
         {/* <div className="banner">
           <Image src={Banner} alt="" width={500} />
         </div> */}
-      </div></div></div><div className="history">
+      </div></div></div><div className="history" style={{height: "100vh"}}>
           <div className="component-header">Welcome to MIDA</div>
           <div className="component-body">
             We are thrilled to welcome you to the Machine Intelligence and Data
@@ -151,9 +160,7 @@ export default function Home() {
             analytics. Together, we can unlock new possibilities and drive
             meaningful change in our world. Welcome to the MIDA family!
           </div>
-          <div className="mandala">
-            <Image src={Bouquet} alt="" width={200} />
-          </div>
+        
         </div><div
           className="history"
           style={{ backgroundColor: "#EEEEEE", height: "50vh" }}
@@ -171,8 +178,8 @@ export default function Home() {
             domains.
           </div>
         </div><div className="history" style={{ height: "50vh" }}>
-          <div className="component-header01">Vision</div>
-          <div className="component-body01">
+          <div className="component-header02">Vision</div>
+          <div className="component-body03">
             {" "}
             Our vision is to be a leading hub for innovation, research, and
             collaboration in the fields of machine intelligence and data
