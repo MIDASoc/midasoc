@@ -1,0 +1,17 @@
+{
+    "tabData": [
+        {
+            "tabName": "Home",
+            "tabAccess": true,
+            "isActive": true
+            
+        },
+        {
+            "tabName": "Contact Us",
+            "tabAccess": true,
+            "isActive": false
+            
+        }
+       
+    ]
+}

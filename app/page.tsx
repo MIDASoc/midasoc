@@ -1,113 +1,250 @@
+"use client";
+import React, { useEffect, useState } from "react";
+import {  useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
+import Header from "./component/Header";
+import Banner from "../app/assets/banner.svg";
+import Bouquet from "../app/assets/bouquet02.jpg";
+import MissionData from "../app/data/MissionData.json";
+import MembershipData from "../app/data/MembershipData.json";
+import GroupsRoundedIcon from "@mui/icons-material/GroupsRounded";
+import ContactUs from "./pages/ContactUs";
 
+import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
+import DownloadForOfflineRoundedIcon from "@mui/icons-material/DownloadForOfflineRounded";
+import PublicRoundedIcon from '@mui/icons-material/PublicRounded';
+import MissionCard from "./component/MissionCard";
+import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
+import MembershipCard from "./component/MembershipCard";
+import DefaultView from "./component/DefaultView";
+
+type TabName = 'Home'|'Members'| 'Events'| 'Contact Us'| 'Became a member';
 export default function Home() {
+  // const count = useSelector((state:RootState)=> state.tab.value);
+  // const dispatch = useDispatch();
+  const [tabRender, setTabRender] = useState("")
+
+  // const tabData = useSelector((state:any) => state.tabData);
+  // const activeTab = tabData.find((tab:any) => tab.isActive);
+
+  const [isJoinUs, setIsJoinUs] = useState(false);
+ const [activeTab, setActiveTab] = useState<TabName>('Home');
+
+  const renderTabContent = () => {
+
+    if(activeTab == "Became a member" && isJoinUs == false){
+      joinUsButton();
+    }
+    else{
+      switch (activeTab) {
+        case "Home":
+          return    "Home"
+        case "Contact Us":
+          return   <ContactUs/>
+       
+        default:
+          return <DefaultView data={activeTab}/>
+      }
+
+    }
+    }
+
+  const joinUsButton = () => {
+    setIsJoinUs((data) => !data);
+    if(activeTab == "Became a member" && isJoinUs==false){
+
+     setActiveTab('Home')
+     setIsJoinUs(true);
+    }
+    console.log("joinUsButtonClick", isJoinUs);
+  };
+
+  const downloadWordFile = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    link.href = '/Membership_Form_MIDA_Final_blank.docx'; // File location in the 'public' folder
+    link.download = 'Membership_Form_MIDA_Final_blank.docx'; // The name of the file to download
+  
+    // Append the link to the document and trigger a click
+    document.body.appendChild(link);
+    link.click();
+  
+    // Remove the link from the document after the download
+    document.body.removeChild(link);
+  };
+
+  useEffect(() => {
+    const header = document.querySelector(".component-header");
+    const body = document.querySelector(".component-body");
+    const historyBody = document.querySelector(".component-body01");
+    const historyHeader = document.querySelector(".component-header01");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active"); // Add class when in view
+          }
+        });
+      },
+      { threshold: 0.1 } // Adjust threshold as needed (0.5 means 50% of element is visible)
+    );
+
+    if (header) {
+      observer.observe(header);
+    }
+    if (body) {
+      observer.observe(body);
+    }
+    if (historyBody) {
+      observer.observe(historyBody);
+    }
+    if (historyHeader) {
+      observer.observe(historyHeader);
+    }
+
+    return () => {
+      if (header) observer.unobserve(header);
+      if (body) observer.unobserve(body);
+      if (historyBody) observer.unobserve(historyBody);
+    };
+  }, [activeTab]);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <div>
+      <Header activeTab={activeTab} setActiveTab={setActiveTab} />
+{/* 
+      <button onClick={()=>dispatch(tabChange())}>redux</button>
+      <span>count</span> */}
+      {/* <h1>Current Active Tab: {activeTab ? activeTab.tabName : 'None'}</h1> */}
+
+     { activeTab === 'Home' ? ( <><div className="landing-container "><div className="landing-container-background"><div className="font-view">
+        <div className="text-view">
+          New Barrackpore Society of Machine{" "}
+          <span style={{ color: "#E02D66" }}>Intelligence</span> and Data
+          Analytics
+        </div>
+        <div className="join-more-button" onClick={joinUsButton}>
+          Join us
+          <ArrowCircleRightRoundedIcon style={{ fontSize: "2.5rem" }} />
+        </div>
+        {/* <div className="banner">
+          <Image src={Banner} alt="" width={500} />
+        </div> */}
+      </div></div></div><div className="history">
+          <div className="component-header">Welcome to MIDA</div>
+          <div className="component-body">
+            We are thrilled to welcome you to the Machine Intelligence and Data
+            Analytics Society (MIDA)! Our society is dedicated to advancing the
+            fields of machine intelligence, data science, and analytics by
+            fostering collaboration, innovation, and knowledge sharing among
+            students, researchers, and professionals.
+            <br />
+            <br />
+            At MIDA, we believe in the transformative power of data-driven
+            solutions and intelligent systems. Whether you're a seasoned expert or
+            a passionate learner, our community offers a platform for you to
+            explore cutting-edge technologies, engage in impactful research, and
+            connect with like-minded individuals.
+            <br />
+            <br />
+            Join us in shaping the future of machine intelligence and data
+            analytics. Together, we can unlock new possibilities and drive
+            meaningful change in our world. Welcome to the MIDA family!
+          </div>
+          <div className="mandala">
+            <Image src={Bouquet} alt="" width={200} />
+          </div>
+        </div><div
+          className="history"
+          style={{ backgroundColor: "#EEEEEE", height: "50vh" }}
+        >
+          {" "}
+          <div className="component-header01">History of MIDA</div>
+          <div className="component-body01">
+            The Machine Intelligence and Data Analytics Society (MIDA) was
+            established in 2023 with a vision to create a dynamic community
+            focused on the rapidly evolving fields of machine intelligence and
+            data analytics. Founded by a group of passionate students,
+            researchers, and professionals, MIDA was born out of the shared belief
+            that collaboration and knowledge exchange are key to driving
+            innovation and solving complex challenges in these cutting-edge
+            domains.
+          </div>
+        </div><div className="history" style={{ height: "50vh" }}>
+          <div className="component-header01">Vision</div>
+          <div className="component-body01">
+            {" "}
+            Our vision is to be a leading hub for innovation, research, and
+            collaboration in the fields of machine intelligence and data
+            analytics. We aspire to empower individuals and organizations to
+            harness the full potential of data-driven technologies, ultimately
+            driving positive societal and technological advancements. Through
+            fostering a community of passionate learners, researchers, and
+            professionals, we aim to shape the future of AI and data science,
+            making impactful contributions to both academia and industry.
+          </div>
+        </div><div
+          className="history"
+          style={{ backgroundColor: "#EEEEEE", height: "100vh" }}
+        >
+          <div className="component-header01">Mission</div>
+          <MissionCard data={MissionData} />
+        </div></>) : renderTabContent()}
+
+      <footer />
+      <div
+        className="membershipModal"
+        style={{
+          right: isJoinUs ? 0 : "50%",
+          bottom: isJoinUs ? 0 : "50%",
+          top: isJoinUs ? 0 : "50%",
+          left: isJoinUs ? 0 : "50%",
+          opacity: isJoinUs ? 1 : 0,
+        }}
+      >
+        <div className="membershipModal-content">
+          <div className="membershipModal-content-header">
+            Membership at MIDA{" "}
+            <CancelRoundedIcon
+              style={{ fontSize: "2rem" }}
+              onClick={joinUsButton}
             />
-          </a>
+          </div>
+          <div className="membershipModal-content-body">
+            <div className="membershipDescriptionContainer">
+              <div className="image-label">
+                <GroupsRoundedIcon style={{ fontSize: "3rem" }} />
+              </div>
+              Becoming a member of MIDA opens the door to a world of
+              opportunities in the fields of machine intelligence and data
+              analytics. Whether you’re a student eager to learn, a researcher
+              looking to collaborate, or a professional seeking to stay ahead of
+              industry trends, MIDA offers a supportive and dynamic community to
+              help you achieve your goals.
+            </div>
+            <MembershipCard
+              data={MembershipData.membershipData.howToJoin}
+              header={"How to Join"}
+            />
+            <MembershipCard
+              data={MembershipData.membershipData["MembershipBenefits:"]}
+              header={"Membership Benefits"}
+            />
+            <MembershipCard
+              data={MembershipData.membershipData.WhoCanJoin}
+              header={"Who Can Join"}
+            />
+            <MembershipCard
+              data={MembershipData.membershipData.membershipFee}
+              header={"Membership Fee"}
+            />
+          </div>
+          <div className="membershipModal-content-footer">
+            <div className="downloadButton" onClick={downloadWordFile}>Download Application<DownloadForOfflineRoundedIcon style={{fontSize: "1.9rem"}}/></div>
+            {/* <div className="downloadButton">Go Online <PublicRoundedIcon style={{fontSize: "1.9rem"}}/></div> */}
+          </div>
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
