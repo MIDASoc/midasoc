@@ -21,7 +21,7 @@ function MembershipCard(data: any) {
       ) : (
         <div className="fee-card">
           {data.data.map((key: any) => (
-            <div className="item-container-fee">
+            <div key={key} className="item-container-fee">
               <span className="fees-card"  style={{ fontWeight: 800, whiteSpace: "nowrap" }}>
                 <span style={{ fontWeight: 100, fontSize:"1rem", whiteSpace: "nowrap" }}>₹</span>{key.fee}
               </span>
