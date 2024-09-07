@@ -10,7 +10,7 @@ function MembershipCard(data: any) {
       {data.header != "Membership Fee" ? (
         <div className="membershipCardItem">
           {data.data.map((key: any) => (
-            <div className="item-container">
+            <div key={key} className="item-container">
               <span style={{ fontWeight: 700, whiteSpace: "nowrap" }}>
                 {key.title}
               </span>
