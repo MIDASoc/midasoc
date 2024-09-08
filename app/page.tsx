@@ -139,7 +139,7 @@ export default function Home() {
         {/* <div className="banner">
           <Image src={Banner} alt="" width={500} />
         </div> */}
-      </div></div></div><div className="history" style={{height: "100vh"}}>
+      </div></div></div><div className="history" >
           <div className="component-header">Welcome to MIDA</div>
           <div className="component-body">
             We are thrilled to welcome you to the Machine Intelligence and Data
@@ -163,7 +163,7 @@ export default function Home() {
         
         </div><div
           className="history"
-          style={{ backgroundColor: "#EEEEEE", height: "50vh" }}
+          style={{ backgroundColor: "#EEEEEE" }}
         >
           {" "}
           <div className="component-header01">History of MIDA</div>
@@ -177,7 +177,7 @@ export default function Home() {
             innovation and solving complex challenges in these cutting-edge
             domains.
           </div>
-        </div><div className="history" style={{ height: "50vh" }}>
+        </div><div className="history" >
           <div className="component-header02">Vision</div>
           <div className="component-body03">
             {" "}
@@ -192,7 +192,7 @@ export default function Home() {
           </div>
         </div><div
           className="history"
-          style={{ backgroundColor: "#EEEEEE", height: "100vh" }}
+          style={{ backgroundColor: "#EEEEEE" }}
         >
           <div className="component-header01">Mission</div>
           <MissionCard data={MissionData} />
