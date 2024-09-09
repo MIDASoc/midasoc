@@ -17,6 +17,8 @@ import MissionCard from "./component/MissionCard";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import MembershipCard from "./component/MembershipCard";
 import DefaultView from "./component/DefaultView";
+import Events from "./pages/Events";
+import Members from "./pages/Members";
 
 type TabName = 'Home'|'Members'| 'Events'| 'Contact Us'| 'Became a member';
 export default function Home() {
@@ -41,6 +43,11 @@ export default function Home() {
           return    "Home"
         case "Contact Us":
           return   <ContactUs/>
+        case "Events":
+          return <Events/>
+
+        case "Members":
+          return <Members/>
        
         default:
           return <DefaultView data={activeTab}/>

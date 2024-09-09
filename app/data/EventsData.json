@@ -1,0 +1,37 @@
+{
+  "eventDetails": [
+    {
+      "id": "1",
+      "eventTitle": "Recent Trends in Machine Learning",
+      "eventDescription": "Description for Event 1",
+      "eventVenue": "Ramakrishna Mission Vivekananda Centenary College, Rharara, Kolkata",
+      "eventDate": "10th January 2024"
+    },
+    {
+      "id": "2",
+      "eventTitle": "An Awareness Program on Artificial Intelligence",
+      "eventDescription": "The seminar was a part of the “Hub of Learning Through Cluster Approach Consisting of Schools and Higher Education Institutions” program. Along with the host school, six other schools also took part in the program. The schools are Pannalal Institution, K.U. Experimental High School, Kalyani Sikshayatan, Bidhan Chandra Memorial Govt. Girls High School, Majherchar Satyapriya Roy Smriti Vidyapith, Springdale High School. Prof. Umapada Pal, President; Prof. Kaushik Roy, Secretary of our society were the spokespersons of that seminar. Some glimpses of the two Seminars are attached herewith. ",
+      "eventVenue": "Ghoshpara Saraswati Trust Estate Vidyapith, Kalyani",
+      "eventDate": "17th January 2024"
+    }
+  ],
+
+  "eventGallery": [
+    { "id": "3", "imageLink": "/banner03.webp", "imageAddress": "Location 01" },
+    { "id": "4", "imageLink": "/banner04.webp", "imageAddress": "Location 02" }
+  ],
+
+  "eventImageGallery": [
+    { "id": "1", "imageLink": "/Picture1.jpg", "imageAddress": "Location 01" },
+    { "id": "2", "imageLink": "/Picture2.jpg", "imageAddress": "Location 02" },
+    { "id": "3", "imageLink": "/Picture3.png", "imageAddress": "Location 01" },
+    { "id": "4", "imageLink": "/Picture4.png", "imageAddress": "Location 02" },
+    { "id": "5", "imageLink": "/Picture5.png", "imageAddress": "Location 01" },
+    { "id": "6", "imageLink": "/Picture6.png", "imageAddress": "Location 02" },
+    { "id": "7", "imageLink": "/Picture7.png", "imageAddress": "Location 01" },
+    { "id": "8", "imageLink": "/Picture8.png", "imageAddress": "Location 02" },
+    { "id": "9", "imageLink": "/Picture9.png", "imageAddress": "Location 02" },
+    { "id": "10", "imageLink": "/Picture10.jpg", "imageAddress": "Location 02" },
+    { "id": "11", "imageLink": "/Picture11.jpg", "imageAddress": "Location 02" }
+  ]
+}

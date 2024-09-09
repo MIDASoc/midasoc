@@ -116,7 +116,7 @@ const Header: React.FC<TabSelectorProps> = ({ activeTab, setActiveTab }) => {
       style={{
         opacity: isVisible ? 1 : 0,
         scale: prevScrollPos!=0 ? 1.02:1,
-        backgroundColor: prevScrollPos!=0  ? "#51008b50" :"#51008b00",
+        backgroundColor: prevScrollPos!=0  ? "#3d52a090" :"#3d52a000",
         backdropFilter : prevScrollPos!=0 ? "blur(40px)": "blur(0px)",
         boxShadow:
           prevScrollPos != 0 ? "0px 4px 8px rgba(0, 0, 0, 0.2)" : "none",
