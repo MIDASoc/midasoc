@@ -7,13 +7,20 @@ import kol03 from "../assets/Illustrator/kolkata/1x/kol03.png";
 import kol04 from "../assets/Illustrator/kolkata/1x/kol04.png";
 import kol05 from "../assets/Illustrator/kolkata/1x/kol05.png";
 import kol06 from "../assets/Illustrator/kolkata/1x/kol06.png";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import PublicIcon from "@mui/icons-material/Public";
 import ArrowCircleRightRoundedIcon from "@mui/icons-material/ArrowCircleRightRounded";
 
-const eventGallery = ImageGallery.eventGallery;
+
+
+const ImageCarousel = (data:any) => {
+  
+
+const eventGallery = data.data;
 
 const extendedEventGallery = [...eventGallery, eventGallery[0]];
-
-const ImageCarousel = () => {
   const slides = [kol01, kol02, kol03, kol04, kol05, kol06];
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalImages = extendedEventGallery.length;
@@ -82,7 +89,7 @@ const ImageCarousel = () => {
           ref={carouselRef}
           className="carousel"
           style={{
-            transform: `translateX(-${(currentIndex * 300) / totalImages}%)`,
+            transform: `translateX(-${(currentIndex * (data.tab === "events"?300:500)) / totalImages}%)`,
             transition: "transform 0.5s ease",
           }}
         >
@@ -102,10 +109,10 @@ const ImageCarousel = () => {
             </div>
           ))}
         </div>
-        <div className="imageContainer">
+        {data.tab==="events" ? <div className="imageContainer">
           <div className="icpContainer">
             <div className="slider-message-container">
-              <span>
+              <span style={{paddingLeft:"1rem", paddingRight:"1rem"}}>
                 <span className="zoom-container">
                   <span className="zoom-element">27th</span>
                 </span>{" "}
@@ -165,7 +172,26 @@ const ImageCarousel = () => {
               </div>
             </div>
           </div>
+        </div> :<div className="imageContainer"> <div className="contactContainer">
+        <div className="contactContainerSegment">
+          <HomeRoundedIcon style={{fontSize:"3rem"}} />
+          213/A/1 East Kodalia, New Brrackpore<br></br>Kolkata-700131, West
+          Bengal, Inida
         </div>
+        <div className="contactContainerSegment">
+          <LocalPhoneIcon style={{fontSize:"3rem"}} />
+         +91 8013901318
+        </div>
+        <div className="contactContainerSegment">
+          <AlternateEmailIcon style={{fontSize:"3rem"}}  />
+          midasociety@gmail.com
+        </div>
+        <div className="contactContainerSegment">
+          <PublicIcon style={{fontSize:"3rem"}} />
+         midasoc.org
+        </div>
+      </div></div>}
+     
       </div>
     </>
   );

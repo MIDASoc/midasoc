@@ -3,6 +3,7 @@
 import EventImageCarousel from "../component/EventImageCarousel";
 import ImageCarousel from "../component/ImageCarousel";
 import TextCarousel from "../component/TextCarousel";
+import ImageGallery from "../data/EventsData.json"
 
 
 
@@ -14,7 +15,7 @@ function Events() {
   
  
     return ( <div className='container2'><div className="eventContainer">
-         <ImageCarousel/>
+         <ImageCarousel data={ImageGallery.eventGallery} tab={"events"}/>
     </div>
       
       

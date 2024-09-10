@@ -17,8 +17,8 @@
   ],
 
   "eventGallery": [
-    { "id": "3", "imageLink": "/banner03.webp", "imageAddress": "Location 01" },
-    { "id": "4", "imageLink": "/banner04.webp", "imageAddress": "Location 02" }
+    { "id": "1", "imageLink": "/banner03.webp", "imageAddress": "Location 01" },
+    { "id": "2", "imageLink": "/banner04.webp", "imageAddress": "Location 02" }
   ],
 
   "eventImageGallery": [

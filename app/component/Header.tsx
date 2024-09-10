@@ -20,7 +20,7 @@ import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import PermContactCalendarRoundedIcon from '@mui/icons-material/PermContactCalendarRounded';
 
 
-type TabName = 'Home'|'Members'| 'Events'| 'Contact Us'| 'Became a member'; // Define valid tab names
+type TabName = 'Homes'|'Members'| 'Events'| 'Contact Us'| 'Became a member'; // Define valid tab names
 
 // Define the props for the TabSelector component
 interface Tab{
@@ -34,7 +34,7 @@ interface TabSelectorProps {
 
 const Header: React.FC<TabSelectorProps> = ({ activeTab, setActiveTab }) => {
 
-  const tabs: Tab[] = [{ name: 'Home', icon: <HomeRoundedIcon/> },
+  const tabs: Tab[] = [{ name: 'Homes', icon: <HomeRoundedIcon/> },
     { name: 'Members', icon:<PeopleAltRoundedIcon/> },
     { name: 'Events', icon: <EventRoundedIcon/> },
     { name: 'Contact Us', icon: <PermContactCalendarRoundedIcon/> },
@@ -55,7 +55,7 @@ const Header: React.FC<TabSelectorProps> = ({ activeTab, setActiveTab }) => {
     }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
         {tabs.map((text, index) => (
-          <ListItem  key={text.name} disablePadding>
+          <ListItem  key={index} disablePadding>
             <ListItemButton onClick={() => handleTabClick(text.name)}>
               <ListItemIcon  sx={{
     color: activeTab === text.name ? 'White' : 'gray', // Change color based on activeTab
@@ -138,15 +138,15 @@ const Header: React.FC<TabSelectorProps> = ({ activeTab, setActiveTab }) => {
             // Desired height in pixels
           />
         </div>
-    {!isMobile ? <div className="tab-card">
-    {tabs.map((data:any) => (
-      data.name != "Became a member" ? (<div key={data.name}  
+    {!isMobile ? (<div className="tab-card">
+    {tabs.map((data:any, index:number) => (
+      data.name != "Became a member" ? (<div key={index}  
       className="tab"
       style={{fontSize:activeTab === data.name ? "1.2rem": "1rem" }}
         onClick={() => handleTabClick(data.name)}
       >{data.name}</div>) : <div className="becameAMemberContainer" onClick={() => handleTabClick(data.name)}>{data.name}</div>
     ))} <div></div>
-    </div> : <><MenuRoundedIcon onClick={toggleDrawer(true)}/>   <Drawer PaperProps={{
+    </div>) : <><MenuRoundedIcon onClick={toggleDrawer(true)}/>   <Drawer PaperProps={{
         sx: {
           backgroundColor: 'rgba(0, 0, 0, 0.1)', // Semi-transparent background
           backdropFilter: 'blur(50px)', // Apply blur effect

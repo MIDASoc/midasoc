@@ -1,83 +1,105 @@
 {"membershipData": {
-    "howToJoin": [
-      {
-        "title": "Application",
-        "description": "Fill out our simple online membership form on the MIDA website."
-      },
-      {
-        "title": "Nominal Fee",
-        "description": "Pay a nominal membership fee of [insert amount] to gain full access to all society benefits and resources. This fee supports the organization of events, workshops, and access to exclusive content."
-      },
-      {
-        "title": "Confirmation",
-        "description": "Once your application and payment are processed, you'll receive a confirmation email with your membership details and benefits."
-      }
-    ],
+ "howToJoin": [
+  {
+    "id": 1,
+    "title": "Application",
+    "description": "Fill out our simple online membership form on the MIDA website."
+  },
+  {
+    "id": 2,
+    "title": "Nominal Fee",
+    "description": "Pay a nominal membership fee of [insert amount] to gain full access to all society benefits and resources. This fee supports the organization of events, workshops, and access to exclusive content."
+  },
+  {
+    "id": 3,
+    "title": "Confirmation",
+    "description": "Once your application and payment are processed, you'll receive a confirmation email with your membership details and benefits."
+  }
+],
 
 
 
-    "MembershipBenefits:": [
-      {
-        "title": "Exclusive Workshops and Webinars",
-        "description": "Gain access to specialized workshops, webinars, and training sessions on cutting-edge topics in machine intelligence and data analytics."
-      },
-      {
-        "title": "Networking Opportunities",
-        "description": "Connect with like-minded individuals, industry professionals, and academic experts through events, conferences, and our online community."
-      },
-      {
-        "title": "Research Collaborations",
-        "description": "Engage in collaborative research projects, gain access to research resources, and contribute to innovative solutions in AI and data science."
-      },
-      {
-        "title": "Career Development",
-        "description": "Take advantage of career guidance, mentorship programs, and job placement assistance through our network of industry partners and alumni."
-      },
-      {
-        "title": "Hands-On Projects",
-        "description": "Participate in hands-on projects and competitions that allow you to apply your skills and gain practical experience in real-world scenarios."
-      },
-      {
-        "title": "Resource Library",
-        "description": "Access our growing library of resources, including research papers, tutorials, and tools to enhance your knowledge and expertise."
-      },
-      {
-        "title": "Discounts on Events",
-        "description": "Enjoy discounted rates for MIDA-hosted events, conferences, and certification courses."
-      }
-    ],
+   "MembershipBenefits": [
+  {
+    "id": 1,
+    "title": "Exclusive Workshops and Webinars",
+    "description": "Gain access to specialized workshops, webinars, and training sessions on cutting-edge topics in machine intelligence and data analytics."
+  },
+  {
+    "id": 2,
+    "title": "Networking Opportunities",
+    "description": "Connect with like-minded individuals, industry professionals, and academic experts through events, conferences, and our online community."
+  },
+  {
+    "id": 3,
+    "title": "Research Collaborations",
+    "description": "Engage in collaborative research projects, gain access to research resources, and contribute to innovative solutions in AI and data science."
+  },
+  {
+    "id": 4,
+    "title": "Career Development",
+    "description": "Take advantage of career guidance, mentorship programs, and job placement assistance through our network of industry partners and alumni."
+  },
+  {
+    "id": 5,
+    "title": "Hands-On Projects",
+    "description": "Participate in hands-on projects and competitions that allow you to apply your skills and gain practical experience in real-world scenarios."
+  },
+  {
+    "id": 6,
+    "title": "Resource Library",
+    "description": "Access our growing library of resources, including research papers, tutorials, and tools to enhance your knowledge and expertise."
+  },
+  {
+    "id": 7,
+    "title": "Discounts on Events",
+    "description": "Enjoy discounted rates for MIDA-hosted events, conferences, and certification courses."
+  }
+],
  
-      "WhoCanJoin": [
-        {
-          "title": "Students",
-          "description": "Build your foundation in AI and data analytics while connecting with peers and mentors."
-        },
-        {
-          "title": "Researchers",
-          "description": "Collaborate with others in the field to push the boundaries of what’s possible in machine intelligence."
-        },
-        {
-          "title": "Professionals",
-          "description": "Stay up-to-date with the latest trends, and expand your network within the industry."
-        }
-      ],
-      "membershipFee":[{
-        "fee": "1000.00",
-        "description": "Academia",
-        "membershipType": "Life membership"
-      },{
-        "fee": "200.00",
-        "description": "Academia",
-        "membershipType": "Annual membership"
-      }, {
-        "fee": "1500.00",
-        "description": "Industry",
-        "membershipType": "Life membership"
-      },{
-        "fee": "300.00",
-        "description": "Industry",
-        "membershipType": "Annual membership"
-      } ]
+     "WhoCanJoin": [
+  {
+    "id": 1,
+    "title": "Students",
+    "description": "Build your foundation in AI and data analytics while connecting with peers and mentors."
+  },
+  {
+    "id": 2,
+    "title": "Researchers",
+    "description": "Collaborate with others in the field to push the boundaries of what’s possible in machine intelligence."
+  },
+  {
+    "id": 3,
+    "title": "Professionals",
+    "description": "Stay up-to-date with the latest trends, and expand your network within the industry."
+  }
+],
+      "membershipFee": [
+  {
+    "id": 1,
+    "fee": "1000.00",
+    "description": "Academia",
+    "membershipType": "Life membership"
+  },
+  {
+    "id": 2,
+    "fee": "200.00",
+    "description": "Academia",
+    "membershipType": "Annual membership"
+  },
+  {
+    "id": 3,
+    "fee": "1500.00",
+    "description": "Industry",
+    "membershipType": "Life membership"
+  },
+  {
+    "id": 4,
+    "fee": "300.00",
+    "description": "Industry",
+    "membershipType": "Annual membership"
+  }
+]
   
     
   }}

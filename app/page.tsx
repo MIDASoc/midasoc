@@ -20,7 +20,7 @@ import DefaultView from "./component/DefaultView";
 import Events from "./pages/Events";
 import Members from "./pages/Members";
 
-type TabName = 'Home'|'Members'| 'Events'| 'Contact Us'| 'Became a member';
+type TabName = 'Homes'|'Members'| 'Events'| 'Contact Us'| 'Became a member';
 export default function Home() {
   // const count = useSelector((state:RootState)=> state.tab.value);
   // const dispatch = useDispatch();
@@ -30,7 +30,7 @@ export default function Home() {
   // const activeTab = tabData.find((tab:any) => tab.isActive);
 
   const [isJoinUs, setIsJoinUs] = useState(false);
- const [activeTab, setActiveTab] = useState<TabName>('Home');
+ const [activeTab, setActiveTab] = useState<TabName>('Homes');
 
   const renderTabContent = () => {
 
@@ -39,8 +39,8 @@ export default function Home() {
     }
     else{
       switch (activeTab) {
-        case "Home":
-          return    "Home"
+        case "Homes":
+          return    "Homes"
         case "Contact Us":
           return   <ContactUs/>
         case "Events":
@@ -60,10 +60,10 @@ export default function Home() {
     setIsJoinUs((data) => !data);
     if(activeTab == "Became a member" && isJoinUs==false){
 
-     setActiveTab('Home')
+     setActiveTab('Homes')
      setIsJoinUs(true);
     }
-    console.log("joinUsButtonClick", isJoinUs);
+  
   };
 
   const downloadWordFile = () => {
@@ -133,7 +133,7 @@ export default function Home() {
       <span>count</span> */}
       {/* <h1>Current Active Tab: {activeTab ? activeTab.tabName : 'None'}</h1> */}
 
-     { activeTab === 'Home' ? ( <><div className="landing-container "><div className="landing-container-background"><div className="font-view">
+     { activeTab === 'Homes' ? ( <><div className="landing-container "><div className="landing-container-background"><div className="font-view">
         <div className="text-view">
           New Barrackpore Society of Machine{" "}
           <span style={{ color: "#E02D66" }}>Intelligence</span> and Data
@@ -241,7 +241,7 @@ export default function Home() {
               header={"How to Join"}
             />
             <MembershipCard
-              data={MembershipData.membershipData["MembershipBenefits:"]}
+              data={MembershipData.membershipData["MembershipBenefits"]}
               header={"Membership Benefits"}
             />
             <MembershipCard

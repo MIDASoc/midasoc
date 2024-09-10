@@ -2,15 +2,15 @@
 "use client";
 
 function MembershipCard(data: any) {
-  console.log("howToJoinData", data);
+
   return (
     <div className="membershipCard">
       <div className="membershipCardTitle">{data.header}</div>
 
       {data.header != "Membership Fee" ? (
         <div className="membershipCardItem">
-          {data.data.map((key: any) => (
-            <div key={key} className="item-container">
+          {data.data.map((key: any, index:any) => (
+            <div key={index} className="item-container">
               <span style={{ fontWeight: 700, whiteSpace: "nowrap" }}>
                 {key.title}
               </span>

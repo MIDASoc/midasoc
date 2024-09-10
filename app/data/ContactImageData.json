@@ -1,0 +1,8 @@
+{
+  "eventImageGallery": [
+    { "id": "1", "imageLink": "/contact02.jpg", "imageAddress": "Location 02" },
+    { "id": "2", "imageLink": "/contact05.jpg", "imageAddress": "Location 02" },
+    { "id": "3", "imageLink": "/contact04.jpg", "imageAddress": "Location 02" },
+    { "id": "4", "imageLink": "/contact06.jpg", "imageAddress": "Location 02" }
+  ]
+}
