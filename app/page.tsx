@@ -54,15 +54,15 @@ export default function Home() {
   
     }
 
-  const joinUsButton = () => {
-    setIsJoinUs((data) => !data);
-    if(activeTab == "Became a member" && isJoinUs==false){
+  // const joinUsButton = () => {
+  //   setIsJoinUs((data) => !data);
+  //   if(activeTab == "Became a member" && isJoinUs==false){
 
-     setActiveTab('Homes')
-     setIsJoinUs(true);
-    }
+  //    setActiveTab('Homes')
+  //    setIsJoinUs(true);
+  //   }
   
-  };
+  // };
 
   const downloadWordFile = () => {
     // Create a link element
