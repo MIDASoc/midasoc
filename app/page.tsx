@@ -215,7 +215,7 @@ export default function Home() {
             Membership at MIDA{" "}
             <CancelRoundedIcon
               style={{ fontSize: "2rem" }}
-              onClick={joinUsButton}
+             
             />
           </div>
           <div className="membershipModal-content-body">
