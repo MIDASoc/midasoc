@@ -20,7 +20,7 @@ import DefaultView from "./component/DefaultView";
 import Events from "./pages/Events";
 import Members from "./pages/Members";
 
-type TabName = 'Homes'|'Members'| 'Events'| 'Contact Us'| 'Became a member';
+type TabName = 'Homes'|'Members'| 'Events'| 'Contact Us';
 export default function Home() {
   // const count = useSelector((state:RootState)=> state.tab.value);
   // const dispatch = useDispatch();
@@ -138,10 +138,6 @@ export default function Home() {
           New Barrackpore Society of Machine{" "}
           <span style={{ color: "#E02D66" }}>Intelligence</span> and Data
           Analytics
-        </div>
-        <div className="join-more-button" onClick={joinUsButton}>
-          Join us
-          <ArrowCircleRightRoundedIcon style={{ fontSize: "2.5rem" }} />
         </div>
         {/* <div className="banner">
           <Image src={Banner} alt="" width={500} />
