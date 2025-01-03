@@ -34,10 +34,8 @@ export default function Home() {
 
   const renderTabContent = () => {
 
-    if(isJoinUs == false){
+  
 
-    }
-    else{
       switch (activeTab) {
         case "Homes":
           return    "Homes"
@@ -53,7 +51,7 @@ export default function Home() {
           return <DefaultView data={activeTab}/>
       }
 
-    }
+  
     }
 
   const joinUsButton = () => {
