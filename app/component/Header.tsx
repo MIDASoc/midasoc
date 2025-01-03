@@ -20,7 +20,7 @@ import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import PermContactCalendarRoundedIcon from '@mui/icons-material/PermContactCalendarRounded';
 
 
-type TabName = 'Homes'|'Members'| 'Events'| 'Contact Us'| 'Became a member'; // Define valid tab names
+type TabName = 'Homes'|'Members'| 'Events'| 'Contact Us'; // Define valid tab names
 
 // Define the props for the TabSelector component
 interface Tab{
@@ -38,7 +38,7 @@ const Header: React.FC<TabSelectorProps> = ({ activeTab, setActiveTab }) => {
     { name: 'Members', icon:<PeopleAltRoundedIcon/> },
     { name: 'Events', icon: <EventRoundedIcon/> },
     { name: 'Contact Us', icon: <PermContactCalendarRoundedIcon/> },
-    { name: 'Became a member', icon: <PersonAddAlt1RoundedIcon/> }];
+    ];
   const [isVisible, setIsVisible] = useState(true); // State to track header visibility
   const [prevScrollPos, setPrevScrollPos] = useState(0); 
   const [open, setOpen] = React.useState(false);
