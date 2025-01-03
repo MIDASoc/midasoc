@@ -34,8 +34,8 @@ export default function Home() {
 
   const renderTabContent = () => {
 
-    if(activeTab == "Became a member" && isJoinUs == false){
-      joinUsButton();
+    if(isJoinUs == false){
+
     }
     else{
       switch (activeTab) {
