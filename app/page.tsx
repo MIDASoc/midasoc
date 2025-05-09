@@ -19,8 +19,9 @@ import MembershipCard from "./component/MembershipCard";
 import DefaultView from "./component/DefaultView";
 import Events from "./pages/Events";
 import Members from "./pages/Members";
+import Jobs from "./pages/Jobs";
 
-type TabName = 'Homes'|'Members'| 'Events'| 'Contact Us';
+type TabName = 'Homes'|'Members'| 'Events'| 'Jobs' | 'Contact Us';
 export default function Home() {
   // const count = useSelector((state:RootState)=> state.tab.value);
   // const dispatch = useDispatch();
@@ -41,6 +42,8 @@ export default function Home() {
           return    "Homes"
         case "Contact Us":
           return   <ContactUs/>
+        case "Jobs":
+          return   <Jobs/>  
         case "Events":
           return <Events/>
 

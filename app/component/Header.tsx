@@ -18,9 +18,10 @@ import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import PersonAddAlt1RoundedIcon from '@mui/icons-material/PersonAddAlt1Rounded';
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import PermContactCalendarRoundedIcon from '@mui/icons-material/PermContactCalendarRounded';
+import WorkIcon from '@mui/icons-material/Work';
 
 
-type TabName = 'Homes'|'Members'| 'Events'| 'Contact Us'; // Define valid tab names
+type TabName = 'Homes'|'Members'| 'Events'|'Jobs'|'Contact Us'; // Define valid tab names
 
 // Define the props for the TabSelector component
 interface Tab{
@@ -37,7 +38,9 @@ const Header: React.FC<TabSelectorProps> = ({ activeTab, setActiveTab }) => {
   const tabs: Tab[] = [{ name: 'Homes', icon: <HomeRoundedIcon/> },
     { name: 'Members', icon:<PeopleAltRoundedIcon/> },
     { name: 'Events', icon: <EventRoundedIcon/> },
+    { name: 'Jobs', icon: <WorkIcon/> },
     { name: 'Contact Us', icon: <PermContactCalendarRoundedIcon/> },
+  
     ];
   const [isVisible, setIsVisible] = useState(true); // State to track header visibility
   const [prevScrollPos, setPrevScrollPos] = useState(0); 
@@ -142,7 +145,7 @@ const Header: React.FC<TabSelectorProps> = ({ activeTab, setActiveTab }) => {
     {tabs.map((data:any, index:number) => (
       data.name != "Became a member" ? (<div key={index}  
       className="tab"
-      style={{fontSize:activeTab === data.name ? "1.2rem": "1rem" }}
+      style={{fontSize:activeTab === data.name ? "1.2rem": "1rem" , color: activeTab=="Jobs"?  prevScrollPos!=0 ?"white" :"#3d52a0" : "white"}}
         onClick={() => handleTabClick(data.name)}
       >{data.name}</div>) : <div className="becameAMemberContainer" onClick={() => handleTabClick(data.name)}>{data.name}</div>
     ))} <div></div>
