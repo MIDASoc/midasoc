@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from "next/image";
-import JobsImage from "../assets/MIDA-Advertisement-2025.jpg";
-
+// import JobsImage from "../assets/MIDA-Advertisement-2025.jpg";
+import JobsImage from "../assets/MIDA-Advertisement-2026.jpg";
 
 function Jobs() {
   return (
